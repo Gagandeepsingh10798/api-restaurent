@@ -20,7 +20,7 @@ router.post('/upload',upload.single('file'),function(req, res, next) {
     res.status(500);
     return next(err);
   }
-  res.json({ fileUrl: 'http://localhost:3000/static/images/items/' + req.file.filename });
+  res.json({ fileUrl: 'https://aksh-api-restaurent.herokuapp.com/static/images/items/' + req.file.filename });
 })
 
 
