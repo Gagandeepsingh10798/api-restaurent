@@ -67,9 +67,9 @@ try {
     
       var i_id = req.params.id;
         var content = req.body
-        db.find({ i_name: content.i_name },function(err,data){
+  
         
-          if(data.length == 0){
+       
             content.i_pic = 'https://aksh-api-restaurent.herokuapp.com/static/images/items/' + req.file.filename;
             db.findOneAndUpdate({_id: i_id},content,{new: true},function (err, doc) {
               if (doc === null) {
@@ -80,20 +80,7 @@ try {
           res.send({"success":true,"status":static.status.OK,"message":"item updated successfully","data":doc});
    
        }
-         });
-           
-          }
-          else{
-            
-  
-            res.send({"success":false,"status":static.status.ERROR,"message":'item already exist ',"data":data})
-            
-    
-          }
-        
-         })
-        
-      }
+         }); }
 
 
 
