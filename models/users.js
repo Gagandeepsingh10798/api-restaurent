@@ -10,7 +10,7 @@ var usersSchema = db.Schema({
   u_address: {type:String,required:true,trim:true},
   u_email:{type:String,required:true,trim:true},
   u_password:{type:String,required:true},
-  u_type:{type:String,required:true}
+  u_type:{type:String,required:true} 
 });
 
 

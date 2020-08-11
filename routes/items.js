@@ -24,14 +24,20 @@ router.post('/upload',upload.single('file'),function(req, res, next) {
 })
 
 
+
+
+
+
+router.put('/:id',upload.single('file'),controller.update)
+
 router
   .route('/')
   .post(controller.register)
   .get(controller.items)
   
 router
-  .route('/:id')  
-  .put(controller.update)
+  .route('/:id') 
   .delete(controller.delete)
+  .get(controller.getitem)
 
 module.exports = router;
